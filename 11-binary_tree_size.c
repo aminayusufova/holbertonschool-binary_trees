@@ -3,8 +3,7 @@
 /**
  * binary_tree_size - counts the number of nodes in a binary tree
  * @tree: ptr to the root of the binary tree
- *
- * Return: number of nodes in the tree or 0 if the tree is empty 
+ * Return: number of nodes in the tree or 0 if the tree is empty
  */
 size_t binary_tree_size(const binary_tree_t *tree)
 {
