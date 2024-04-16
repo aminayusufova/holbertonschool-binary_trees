@@ -35,14 +35,18 @@ int _binary_tree_balance(const binary_tree_t *tree)
  */
 int sub_tree_perfect(const binary_tree_t *tree)
 {
-        if (tree && !tree->right & !tree->left)
-                return (1);
+    if (tree == NULL)
+        return 1;
 
-        if (tree && tree->right && tree->left)
-                return (1 && sub_tree_perfect(tree->left)
-                && sub_tree_perfect(tree->right));
-        return (0);
+    if (tree->left == NULL && tree->right == NULL)
+        return 1;
+
+    if (tree->left == NULL || tree->right == NULL)
+        return 0;
+
+    return sub_tree_perfect(tree->left) && sub_tree_perfect(tree->right);
 }
+
 /**
  * binary_tree_is_perfect - checks if a binary tree is perfect
  * @tree: pointer to the root node of the tree to check
@@ -50,11 +54,12 @@ int sub_tree_perfect(const binary_tree_t *tree)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-        if (!tree)
-                return (0);
+    if (tree == NULL)
+        return 0;
 
-        if (_binary_tree_balance(tree) != 0)
-                return (0);
+    if (_binary_tree_balance(tree) != 0)
+        return 0;
 
-        return (sub_tree_perfect(tree->left) && sub_tree_perfect(tree->right));
+    return sub_tree_perfect(tree->left) && sub_tree_perfect(tree->right);
 }
+
