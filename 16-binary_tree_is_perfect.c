@@ -62,4 +62,3 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
     return sub_tree_perfect(tree->left) && sub_tree_perfect(tree->right);
 }
-
