@@ -28,4 +28,4 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	right_leaves = binary_tree_leaves(tree->right);
 
 	return (left_leaves == right_leaves);
-}}
+}
